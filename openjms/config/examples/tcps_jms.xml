@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<!-- OpenJMS configuration:
+     . TCPS connectors  
+     . JDBM persistency
+     . embedded JNDI provider
+     . single host                                       
+     . preconfigured destinations
+ -->
+
+<Configuration>
+
+  <!-- Required when using a TCPS connector -->
+  <Connectors>
+    <Connector scheme="tcps">
+      <ConnectionFactories>
+        <QueueConnectionFactory name="JmsQueueConnectionFactory" />
+        <TopicConnectionFactory name="JmsTopicConnectionFactory" />
+      </ConnectionFactories>
+    </Connector>
+  </Connectors>
+
+  <!-- Required -->
+  <DatabaseConfiguration>
+    <JdbmDatabaseConfiguration name="openjms.db" />
+  </DatabaseConfiguration>
+
+  <!-- Required -->
+  <AdminConfiguration
+     script="${openjms.home}\bin\startjms.bat"
+     config="${openjms.home}\config\examples\tcps_jms.xml" />
+
+  <!-- Optional. If not specified, no destinations will be created -->
+  <AdministeredDestinations>
+    <AdministeredTopic name="topic1">
+      <Subscriber name="sub1" />
+      <Subscriber name="sub2" />
+    </AdministeredTopic>
+  
+    <AdministeredQueue name="queue1" />
+    <AdministeredQueue name="queue2" />
+    <AdministeredQueue name="queue3" />
+  </AdministeredDestinations>
+
+</Configuration>

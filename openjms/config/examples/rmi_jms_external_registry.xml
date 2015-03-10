@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<!-- OpenJMS configuration:
+     . RMI connectors  
+     . JDBM persistency
+     . embedded JNDI provider
+     . external RMI registry, running on port 1099
+     . preconfigured destinations
+ -->
+
+<Configuration>
+
+  <!-- Required when using an RMI connector -->
+  <Connectors>
+    <Connector scheme="rmi">
+      <ConnectionFactories>
+        <QueueConnectionFactory name="JmsQueueConnectionFactory" />
+        <TopicConnectionFactory name="JmsTopicConnectionFactory" />
+      </ConnectionFactories>
+    </Connector>
+  </Connectors>
+
+  <!-- Required when running an external RMI registry  -->
+  <RmiConfiguration embeddedRegistry="false"
+                    registryHost="localhost"
+                    registryPort="1099">
+  </RmiConfiguration>
+    
+  <!-- Required -->
+  <DatabaseConfiguration>
+    <JdbmDatabaseConfiguration name="openjms.db" />
+  </DatabaseConfiguration>
+
+  <!-- Required -->
+  <AdminConfiguration
+     script="${openjms.home}\bin\startjms.bat"
+     config="${openjms.home}\config\examples\rmi_jms_external_registry.xml" />
+
+  <!-- Optional. If not specified, no destinations will be created -->
+  <AdministeredDestinations>
+    <AdministeredTopic name="topic1">
+      <Subscriber name="sub1" />
+      <Subscriber name="sub2" />
+    </AdministeredTopic>
+  
+    <AdministeredQueue name="queue1" />
+    <AdministeredQueue name="queue2" />
+    <AdministeredQueue name="queue3" />
+  </AdministeredDestinations>
+
+</Configuration>

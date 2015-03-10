@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<!-- OpenJMS configuration:
+     . HTTP connectors  
+     . JDBM persistency
+     . embedded JNDI provider
+     . preconfigured destinations
+ -->
+
+<Configuration>
+
+  <!-- Connecting by way of a proxy 
+       A client needs to set these system properties if it requires to go 
+       through a proxy for HTTP:
+         System.setProperty("http.proxyHost", host);
+         System.setProperty("http.proxyPort", port);
+   -->
+        
+  <!-- Required when using an HTTP connector -->
+  <Connectors>
+    <Connector scheme="http">
+      <ConnectionFactories>
+        <QueueConnectionFactory name="JmsQueueConnectionFactory" />
+        <TopicConnectionFactory name="JmsTopicConnectionFactory" />
+      </ConnectionFactories>
+    </Connector>
+    <Connector scheme="tcp">
+      <ConnectionFactories>
+        <QueueConnectionFactory name="TCPQueueConnectionFactory" />
+        <TopicConnectionFactory name="TCPTopicConnectionFactory" />
+      </ConnectionFactories>
+    </Connector>
+  </Connectors>
+
+  <HttpConfiguration host="localhost"
+                     port="80"
+                     clientPingInterval="20"
+                     serverServlet="/openjms/OpenJMSServer"
+                     jndiServlet="/openjms/OpenJMSJndi"
+                     adminServlet="/openjms/OpenJMSServer" />
+
+  <!-- Required  -->
+  <DatabaseConfiguration>
+    <JdbmDatabaseConfiguration name="openjms.db" />
+  </DatabaseConfiguration>
+
+  <!-- Required -->    
+  <AdminConfiguration
+     script="${openjms.home}\bin\openjms.bat run"
+     config="${openjms.home}\config\examples\http_jms.xml" />
+    
+  <!-- Optional. If not specified, no destinations will be created -->
+  <AdministeredDestinations>
+    <AdministeredTopic name="topic1">
+      <Subscriber name="sub1" />
+      <Subscriber name="sub2" />
+    </AdministeredTopic>
+  
+    <AdministeredQueue name="queue1" />
+    <AdministeredQueue name="queue2" />
+    <AdministeredQueue name="queue3" />
+  </AdministeredDestinations>
+
+</Configuration>

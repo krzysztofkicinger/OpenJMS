@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>OpenJMS - Using OpenJMS</title><style type="text/css" media="all">
+          @import url("../style/maven-base.css");
+          
+			    @import url("../style/maven-theme.css");</style><link rel="stylesheet" href="../style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta><meta name="author" content="Tim Anderson"></meta><meta name="email" content="tma@netspace.net.au"></meta></head><body class="composite"><div id="banner"><a href="http://openjms.sourceforge.net" id="projectLogo"><img alt="OpenJMS" src="../images/openjms.gif"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">
+                	Last published: 07 May 2004
+                  | Doc for 0.7.6.1</div><div class="xright">
+        
+        <a href="http://openjms.sourceforge.net/">Home Page</a>
+      
+        
+          
+            <span class="separator">|</span>
+          
+        
+        <a href="http://sourceforge.net/projects/openjms/">SourceForge Project Page</a>
+      
+        
+          
+            <span class="separator">|</span>
+          
+        
+        <a href="http://jmscts.sourceforge.net/">JMS CTS</a>
+      
+        
+          
+            <span class="separator">|</span>
+          
+        
+        <a href="http://java.sun.com/products/jms/">JMS</a>
+      </div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuOpenJMS"><h5>OpenJMS</h5><ul><li class="none"><a href="../index.html">Overview</a></li><li class="none"><a href="../status.html">News and Status</a></li><li class="none"><a href="../downloads.html">Downloads</a></li><li class="none"><a href="../gettingstarted.html">Getting Started</a></li><li class="expanded"><a href="../usersguide/index.html">User Guide</a></li><li class="none"><strong><a href="../usersguide/using.html">Using OpenJMS</a></strong></li><li class="none"><a href="../usersguide/examples.html">Examples</a></li><li class="none"><a href="../usersguide/jars.html">Client JARS</a></li><li class="collapsed"><a href="../usersguide/connectors.html">Connectors</a></li><li class="none"><a href="../usersguide/admin.html">Administration API</a></li><li class="collapsed"><a href="../adminguide/index.html">Administrator Guide</a></li><li class="collapsed"><a href="../devguide/index.html">Developer Guide</a></li><li class="none"><a href="../faq.html">FAQ</a></li></ul></div><div id="search"><h5>Search OpenJMS</h5><form action="http://www.google.com/search" method="get"><a href="http://www.google.com" class="navlink"><img height="32" width="75" alt="Google" src="http://www.google.com/logos/Logo_25wht.gif"></img></a><input name="q" maxlength="255" size="15" type="text" value="" id="q"></input><input name="btnG" type="submit" value="Go" id="btnG"></input><input name="domains" type="hidden" value="http://openjms.sourceforge.net"></input><input name="sitesearch" type="hidden" value="http://openjms.sourceforge.net" id="search"></input></form></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="../index.html">About OpenJMS</a></li><li class="collapsed"><a href="../project-info.html">Project Info</a></li><li class="collapsed"><a href="../maven-reports.html">Project Reports</a></li><li class="none"><a href="http://maven.apache.org/development-process.html">Development Process</a></li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="../images/logos/maven-button-1.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><h2><a name="Overview">Overview</a></h2><p>
+        This document provides code examples demonstrating how to send
+        and receive messages using the
+        <a href="../glossary.html#publish-and-subscribe">
+          publish-and-subscribe
+        </a>
+        and <a href="../glossary.html#point-to-point">point-to-point</a> 
+        messaging styles.
+      </p></div><div class="section"><h2><a name="Preparatory_work">Preparatory work</a></h2><p>
+        OpenJMS uses JNDI (the <a href="http://java.sun.com/products/jndi">
+        Java Naming and Directory Interface</a>), to store connection
+        factories, topics, and queues.
+      </p><p>
+        In order to use either of the JMS messaging styles, you must first 
+        create a JNDI <code>Context</code>:
+
+        
+    <div class="source"><pre>
+import java.util.Hashtable;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+// ...
+
+    Hashtable properties = new Hashtable();
+    properties.put(Context.INITIAL_CONTEXT_FACTORY, 
+                   "org.exolab.jms.jndi.InitialContextFactory");
+    properties.put(Context.PROVIDER_URL, "rmi://localhost:1099/");
+
+    Context context = new InitialContext(properties);
+        </pre></div>
+  
+      </p></div><div class="section"><h2><a name="Publish-and-Subscribe">Publish-and-Subscribe</a></h2><p>
+        This section shows how to send and receive messages using
+        Publish-and-Subscribe messaging.
+      </p><div class="subsection"><h3><a name="Retrieving_a_TopicConnectionFactory">Retrieving a TopicConnectionFactory</a></h3><p>
+          The message publisher and message subscriber need to look up a 
+          <code>TopicConnectionFactory</code> from JNDI, in order to
+          create a <code>TopicConnection</code> and <code>TopicSession</code>.
+        </p><p>
+          OpenJMS is pre-configured with a <code>TopicConnectionFactory</code>
+          named <em>"JmsTopicConnectionFactory"</em>, which can be retrieved 
+          as follows:
+
+          
+    <div class="source"><pre>
+import javax.jms.TopicConnectionFactory;
+
+// ...
+
+    TopicConnectionFactory factory = 
+        (TopicConnectionFactory) context.lookup("JmsTopicConnectionFactory");
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Creating_a_TopicConnection">Creating a TopicConnection</a></h3><p>
+          The <code>TopicConnectionFactory</code> can then be used to create
+          a <code>TopicConnection</code>:
+          
+    <div class="source"><pre>
+import javax.jms.TopicConnection;
+
+// ...
+
+    TopicConnection connection = factory.createTopicConnection();
+    connection.start();
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Creating_a_TopicSession">Creating a TopicSession</a></h3><p>
+          
+    <div class="source"><pre>
+import javax.jms.Session;
+import javax.jms.TopicSession;
+
+// ...
+
+    TopicSession session = 
+        connection.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Retrieving_a_Topic">Retrieving a Topic</a></h3><p>
+          The message publisher and message subscriber need to look up a 
+          <code>Topic</code> from JNDI in order to publish and subscribe
+          to messages.
+        </p><p>
+          OpenJMS is pre-configured with a <code>Topic</code> named
+          <em>"topic1"</em>, which can be retrieved as follows:
+
+          
+    <div class="source"><pre>
+import javax.jms.Topic;
+
+// ...
+
+    Topic topic = (Topic) context.lookup("topic1");
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Sending_messages_to_a_Topic">Sending messages to a Topic</a></h3><p>
+          
+    <div class="source"><pre>
+import javax.jms.TextMessage;
+import javax.jms.TopicPublisher;
+
+// ...
+
+    TopicPublisher publisher = session.createPublisher(topic);
+    TextMessage message = session.createTextMessage("Hello World!");
+    publisher.publish(message);       
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Receiving_messages_from_a_Topic">Receiving messages from a Topic</a></h3><p>
+          The following example shows how to synchronously receive messages
+          from a <code>Topic</code>:
+
+          
+    <div class="source"><pre>
+import javax.jms.TextMessage;
+import javax.jms.TopicSubscriber;
+
+// ...
+
+    TopicSubscriber subscriber = session.createSubscriber(topic);
+    TextMessage message = (TextMessage) subscriber.receive();
+    System.out.println("Received message: " + message.getText());
+          </pre></div>
+  
+        </p><p>
+          In the above, the subscriber blocks until it receives a message.
+        </p></div></div><div class="section"><h2><a name="Point-to-Point">Point-to-Point</a></h2><p>
+        This section demonstrates how to send and receive messages using
+        Point-to-Point messaging.
+      </p><div class="subsection"><h3><a name="Retrieving_a_QueueConnectionFactory">Retrieving a QueueConnectionFactory</a></h3><p>
+          The message sender and message receiver need to look up a 
+          <code>QueueConnectionFactory</code> from JNDI, in order to
+          create a <code>QueueConnection</code> and <code>QueueSession</code>.
+        </p><p>
+          OpenJMS is pre-configured with a <code>QueueConnectionFactory</code>
+          named <em>"JmsQueueConnectionFactory"</em>, which can be retrieved 
+          as follows:
+
+          
+    <div class="source"><pre>
+import javax.jms.QueueConnectionFactory;
+
+// ...
+
+    QueueConnectionFactory factory = 
+        (QueueConnectionFactory) context.lookup("JmsQueueConnectionFactory");
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Creating_a_QueueConnection">Creating a QueueConnection</a></h3><p>
+          The <code>QueueConnectionFactory</code> can then be used to create
+          a <code>QueueConnection</code>:
+          
+    <div class="source"><pre>
+import javax.jms.QueueConnection;
+
+// ...
+
+    QueueConnection connection = factory.createQueueConnection();
+    connection.start();
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Creating_a_QueueSession">Creating a QueueSession</a></h3><p>
+          
+    <div class="source"><pre>
+import javax.jms.Session;
+import javax.jms.QueueSession;
+
+// ...
+
+    QueueSession session = 
+        connection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Retrieving_a_Queue">Retrieving a Queue</a></h3><p>
+          The message sender and message receiver need to look up a 
+          <code>Queue</code> from JNDI in order to send and receive messages.
+        </p><p>
+          OpenJMS is pre-configured with a <code>Queue</code> named
+          <em>"queue1"</em>, which can be retrieved as follows:
+
+          
+    <div class="source"><pre>
+import javax.jms.Queue;
+
+// ...
+
+    Queue queue = (Queue) context.lookup("queue1");
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Sending_messages_to_a_Queue">Sending messages to a Queue</a></h3><p>
+          The following example shows how to send messages to a 
+          <code>Queue</code>:
+
+          
+    <div class="source"><pre>
+import javax.jms.QueueSender;
+import javax.jms.TextMessage;
+
+// ...
+
+    QueueSender sender = session.createSender(queue);
+    TextMessage message = session.createTextMessage("Hello World!");
+    sender.send(message);       
+          </pre></div>
+  
+        </p></div><div class="subsection"><h3><a name="Receiving_messages_from_a_Queue">Receiving messages from a Queue</a></h3><p>
+          The following example shows how to asynchronously receive messages
+          from a <code>Queue</code>:
+
+          
+    <div class="source"><pre>
+import javax.jms.JMSException;
+import javax.jms.MessageListener;
+import javax.jms.QueueReceiver;
+import javax.jms.TextMessage;
+
+// ...
+
+    QueueReceiver receiver = session.createReceiver(queue);
+    receiver.setMessageListener(new MessageListener() {
+        public void onMessage(Message message) {
+            TextMessage text = (TextMessage) message;
+            System.out.println("Received message: " + message.getText());
+        }
+    });
+          </pre></div>
+  
+        </p></div></div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xleft"><a href="http://sourceforge.net/projects/openjms">
+        <img src="http://sourceforge.net/sflogo.php?group_id=54559" border="0" alt="sf logo"></img>
+      </a></div><div class="xright">© 1999-2004, The OpenJMS Group</div><div class="clear"><hr></hr></div></div></body></html>

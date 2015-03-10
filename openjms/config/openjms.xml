@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<!-- OpenJMS configuration:
+     . RMI connectors  
+     . JDBM persistency
+     . embedded JNDI provider
+     . embedded RMI registry, running on port 1099
+     . preconfigured destinations
+
+     NOTES: this configuration shows all configuration elements relevant
+            when using an RMI connector. 
+ -->
+
+<Configuration>
+
+    <!-- Optional. This represents the default configuration  -->
+    <ServerConfiguration host="localhost" embeddedJNDI="true"/>
+
+    <!-- Optional. This represents the default configuration  -->
+    <TcpConfiguration port="3030" jndiPort="3035"/>
+
+    <!-- Required when using an RMI connector -->
+    <Connectors>
+        <Connector scheme="tcp">
+            <ConnectionFactories>
+                <QueueConnectionFactory name="JmsQueueConnectionFactory"/>
+                <TopicConnectionFactory name="JmsTopicConnectionFactory"/>
+            </ConnectionFactories>
+        </Connector>
+        <Connector scheme="rmi">
+            <ConnectionFactories>
+                <QueueConnectionFactory name="JmsQueueConnectionFactory"/>
+                <TopicConnectionFactory name="JmsTopicConnectionFactory"/>
+            </ConnectionFactories>
+        </Connector>
+    </Connectors>
+
+    <!-- Required  -->
+    <DatabaseConfiguration>
+        <JdbmDatabaseConfiguration name="openjms.db"/>
+    </DatabaseConfiguration>
+
+    <!-- Required -->
+    <AdminConfiguration script="${openjms.home}\bin\startup.bat"/>
+
+    <!-- Optional. If not specified, no destinations will be created -->
+    <AdministeredDestinations>
+        <AdministeredTopic name="simpleTopic"/>
+        <AdministeredTopic name="objectMessagesTopic"/>
+        <AdministeredTopic name="bytesMessagesTopic"/>
+        <AdministeredTopic name="durableTopic"/>
+        <AdministeredQueue name="simpleQueue"/>
+        <AdministeredQueue name="asynchronousQueue"/>
+        <AdministeredQueue name="filteringQueue"/>
+    </AdministeredDestinations>
+
+    <!-- Optional. This represents the default configuration  -->
+    <LoggerConfiguration file="${openjms.home}/config/log4j.xml"/>
+
+    <!-- Optional. If not specified, no users will be created -->
+    <Users>
+        <User name="admin" password="openjms"/>
+    </Users>
+
+</Configuration>

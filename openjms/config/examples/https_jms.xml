@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<!-- OpenJMS configuration:
+     . HTTPS connectors  
+     . JDBM persistency
+     . embedded JNDI provider
+     . preconfigured destinations
+ -->
+
+<Configuration>
+
+  <!-- Connecting by way of a proxy 
+       A client needs to set these system properties if it requires to go 
+       through a proxy for HTTPS:
+         System.setProperty("https.proxyHost", host);
+         System.setProperty("https.proxyPort", port);
+   -->
+                               
+  <!-- Required when using an HTTPS connector -->
+  <Connectors>
+    <Connector scheme="https">
+      <ConnectionFactories>
+        <QueueConnectionFactory name="JmsQueueConnectionFactory" />
+        <TopicConnectionFactory name="JmsTopicConnectionFactory" />
+      </ConnectionFactories>
+    </Connector>
+    <Connector scheme="tcp">
+      <ConnectionFactories>
+        <QueueConnectionFactory name="TCPQueueConnectionFactory" />
+        <TopicConnectionFactory name="TCPTopicConnectionFactory" />
+      </ConnectionFactories>
+    </Connector>
+  </Connectors>
+
+  <HttpsConfiguration host="localhost"
+                      port="8443"
+                      clientPingInterval="20"
+                      serverServlet="/openjms/OpenJMSServer"
+                      jndiServlet="/openjms/OpenJMSJndi"
+                      adminServlet="/openjms/OpenJMSServer">
+  </HttpsConfiguration>
+
+  <!-- Required  -->
+  <DatabaseConfiguration>
+    <JdbmDatabaseConfiguration name="openjms.db" />
+  </DatabaseConfiguration>
+
+  <!-- Required -->    
+  <AdminConfiguration
+     script="${openjms.home}\bin\startjms.bat"
+     config="${openjms.home}\config\examples\https_jms.xml" />
+    
+  <!-- Optional. If not specified, no destinations will be created -->
+  <AdministeredDestinations>
+    <AdministeredTopic name="topic1">
+      <Subscriber name="sub1" />
+      <Subscriber name="sub2" />
+    </AdministeredTopic>
+  
+    <AdministeredQueue name="queue1" />
+    <AdministeredQueue name="queue2" />
+    <AdministeredQueue name="queue3" />
+  </AdministeredDestinations>
+
+</Configuration>

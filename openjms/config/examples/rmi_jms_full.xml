@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<!-- OpenJMS configuration:
+     . RMI connectors  
+     . JDBM persistency
+     . embedded JNDI provider
+     . embedded RMI registry, running on port 1099
+     . preconfigured destinations
+
+     This configuration shows all configuration elements relevant when using an
+     RMI connector
+ -->
+
+<Configuration>
+
+  <!-- Required when using an RMI connector -->
+  <Connectors>
+    <Connector scheme="rmi">
+      <ConnectionFactories>
+        <QueueConnectionFactory name="JmsQueueConnectionFactory" />
+        <TopicConnectionFactory name="JmsTopicConnectionFactory" />
+      </ConnectionFactories>
+    </Connector>
+  </Connectors>
+    
+  <!-- Required -->
+  <DatabaseConfiguration>
+    <JdbmDatabaseConfiguration name="openjms.db" />
+  </DatabaseConfiguration>
+    
+  <!-- Required -->
+  <AdminConfiguration
+     script="${openjms.home}\bin\startjms.bat"
+     config="${openjms.home}\config\examples\rmi_jms_full.xml" />
+    
+  <!-- Optional. This represents the default configuration  -->
+  <ServerConfiguration host="localhost" embeddedJNDI="true" />
+
+  <!-- Optional. This represents the default configuration  -->
+  <RmiConfiguration embeddedRegistry="true"
+                    registryHost="localhost"
+                    registryPort="1099"
+                    clientPingInterval="15"
+                    serverName="OpenJMSServer"
+                    jndiName="JndiServer"
+                    adminName="JmsAdminServer">
+  </RmiConfiguration>
+
+  <!-- Optional. This represents the default configuration  -->
+  <MessageManagerConfiguration destinationCacheSize="10000" />
+
+  <!-- Optional. This represents the default configuration  -->
+  <SchedulerConfiguration maxThreads="10" />
+
+  <!-- Optional. This represents the default configuration  -->
+  <GarbageCollectionConfiguration memoryCheckInterval="60"
+                                  lowWaterThreshold="20"
+                                  garbageCollectionInterval="120"
+                                  garbageCollectionThreadPriority="5">
+  </GarbageCollectionConfiguration>
+
+  <!-- Optional. This represents the default configuration  -->
+  <LoggerConfiguration file="${openjms.home}/config/log4j.xml" />
+
+  <!-- Optional. If not specified, no destinations will be created -->
+  <AdministeredDestinations>
+    <AdministeredTopic name="topic1">
+      <Subscriber name="sub1" />
+      <Subscriber name="sub2" />
+    </AdministeredTopic>
+  
+    <AdministeredQueue name="queue1" />
+    <AdministeredQueue name="queue2" />
+    <AdministeredQueue name="queue3" />
+  </AdministeredDestinations>
+
+</Configuration>

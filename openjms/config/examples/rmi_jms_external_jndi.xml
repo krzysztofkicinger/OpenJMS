@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<!-- OpenJMS configuration:
+     . RMI connectors  
+     . JDBM persistency
+     . external JNDI provider (rmiregistry), running on port 3031
+     . preconfigured destinations
+ -->
+
+<Configuration>
+
+  <!-- Required when using an RMI connector -->
+  <Connectors>
+    <Connector scheme="rmi">
+      <ConnectionFactories>
+        <QueueConnectionFactory name="JmsQueueConnectionFactory" />
+        <TopicConnectionFactory name="JmsTopicConnectionFactory" />
+      </ConnectionFactories>
+    </Connector>
+  </Connectors>
+    
+  <!-- Required when specifying an external JNDI provider  -->
+  <ServerConfiguration host="localhost" embeddedJNDI="false" />
+
+  <!-- Required when specifying an external JNDI provider -->
+  <JndiConfiguration>
+    <property name="java.naming.factory.initial"
+              value="com.sun.jndi.rmi.registry.RegistryContextFactory" />
+    <property name="java.naming.provider.url"
+              value="rmi://localhost:3031" />
+  </JndiConfiguration>
+  
+  <!-- Required -->
+  <DatabaseConfiguration>
+    <JdbmDatabaseConfiguration name="openjms.db" />
+  </DatabaseConfiguration>
+
+  <!-- Required -->
+  <AdminConfiguration
+     script="${openjms.home}\bin\startjms.bat"
+     config="${openjms.home}\config\examples\rmi_jms_external_jndi.xml" />
+
+  <!-- Optional. If not specified, no destinations will be created -->
+  <AdministeredDestinations>
+    <AdministeredTopic name="topic1">
+      <Subscriber name="sub1" />
+      <Subscriber name="sub2" />
+    </AdministeredTopic>
+  
+    <AdministeredQueue name="queue1" />
+    <AdministeredQueue name="queue2" />
+    <AdministeredQueue name="queue3" />
+  </AdministeredDestinations>
+
+</Configuration>

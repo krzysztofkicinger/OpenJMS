@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<!-- OpenJMS configuration:
+     . TCP connectors  
+     . JDBC persistency
+     . embedded JNDI provider
+     . preconfigured destinations
+ -->
+
+<Configuration>
+
+  <ServerConfiguration host="localhost" embeddedJNDI="true" />
+  
+  <!-- Required -->
+  <DatabaseConfiguration>
+
+  <!-- Uncomment the appropriate RbmsDatabaseConfiguration and change the
+       parameters to match your setup
+   -->
+
+  <!-- hsql Database Engine (remote version)
+  <RdbmsDatabaseConfiguration
+      driver="org.hsqldb.jdbcDriver" 
+      url="jdbc:hsqldb:hsql://localhost"
+      user="openjms"
+      password="openjms" />
+  -->
+
+  <!-- hsql Database Engine (local version)
+  <RdbmsDatabaseConfiguration
+      driver="org.hsqldb.jdbcDriver" 
+      url="jdbc:hsqldb:openjms.db"
+      user="sa"
+      password="" />
+  -->
+
+  <!-- MySQL
+    <RdbmsDatabaseConfiguration
+      driver="org.gjt.mm.mysql.Driver" 
+      url="jdbc:mysql://localhost/openjms"
+      user="openjms" 
+      password="openjms"
+      evictionInterval="3600"
+      testQuery="select current_date"/>
+   -->
+
+  <!-- Oracle
+    <RdbmsDatabaseConfiguration
+      driver="oracle.jdbc.driver.OracleDriver"
+      url="jdbc:oracle:oci8:@mqtest" 
+      user="system" 
+      password="manager" />
+   -->
+
+  <!-- Sybase configuration
+    <RdbmsDatabaseConfiguration
+      driver="com.sybase.jdbc2.jdbc.SybDriver" 
+      url="jdbc:sybase:Tds:homent:5002/test" 
+      user="jim" 
+      password="ab1234" />
+   -->
+
+  <!-- MS SQLServer
+    <RdbmsDatabaseConfiguration
+      driver="com.thinweb.tds.Driver" 
+      url="jdbc:twtds:sqlserver://localhost:1433/openjms"
+      user="sa" 
+      password="sa" />
+   -->
+
+  <!-- Interbase
+    <RdbmsDatabaseConfiguration
+      driver="interbase.interclient.Driver" 
+      url="jdbc:interbase://jima/c:\interbase\bin\openjms"
+      user="openjms" 
+      password="openjms" />
+  -->
+
+  <!-- JDataStore (remote/multiuser version)
+    <RdbmsDatabaseConfiguration
+      driver="com.borland.datastore.jdbc.DataStoreDriver" 
+      url="jdbc:borland:dsremote://myserver/E:\temp\openjms\openjms.jds"
+      user="myuser" 
+      password="password" />
+  --> 
+  
+  <!-- JDataStore (local version)
+    <RdbmsDatabaseConfiguration
+      driver="com.borland.datastore.jdbc.DataStoreDriver" 
+      url="jdbc:borland:dslocal:E:\temp\openjms\openjms"
+      user="myuser" 
+      password="password" />  
+  -->
+
+  <!-- DB2
+    <RdbmsDatabaseConfiguration
+      driver="COM.ibm.db2.jdbc.app.DB2Driver"
+      url="jdbc:db2:openjms"
+      userName="username"
+      password="password"
+      retries="5"
+      timeout ="2000" />
+  -->
+
+  <!-- Mckoi
+    <RdbmsDatabaseConfiguration
+      driver="com.mckoi.JDBCDriver"
+      url="jdbc:mckoi://<host>[:9157][/<schema>]/"
+      user="[user]"
+      password="[password]"/>
+  -->
+
+  </DatabaseConfiguration>
+
+  <!-- Required -->
+  <AdminConfiguration
+     script="${openjms.home}\bin\startjms.bat"
+     config="${openjms.home}\config\examples\tcp_jms_jdbc.xml" />
+
+  <!-- Optional. If not specified, no destinations will be created -->
+  <AdministeredDestinations>
+    <AdministeredTopic name="topic1">
+      <Subscriber name="sub1" />
+      <Subscriber name="sub2" />
+    </AdministeredTopic>
+  
+    <AdministeredQueue name="queue1" />
+    <AdministeredQueue name="queue2" />
+    <AdministeredQueue name="queue3" />
+  </AdministeredDestinations>
+
+</Configuration>

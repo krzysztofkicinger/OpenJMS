@@ -1,0 +1,81 @@
+<!-- $Id: examples.build.xml,v 1.13 2003/08/26 08:49:03 tanderson Exp $ -->
+
+<project name="openjms" default="all">
+
+  <!-- ==================================================================== -->
+  <!--                              Properties                              -->
+  <!-- ==================================================================== -->
+  <!-- main directories -->
+  <property name="source.dir" value="src" />
+  <property name="etc.dir" value="${source.dir}/etc" />
+  <property name="examples.dir" value="${source.dir}/examples" />
+  <property name="lib.dir" value="lib" />
+  <property name="dist.dir" value="dist" />
+  <property name="execute.dir" value="bin" />
+  <property name="build.dir" value="build" />
+
+  <property name="build.compiler" value="modern" />
+  <property name="deprecation" value="false" />
+
+
+  <!-- ==================================================================== -->
+  <!--                  The classpath used to build the project             -->
+  <!-- ==================================================================== -->
+  <path id="project.class.path">
+    <pathelement path="${lib.dir}/exolabcore-0.3.7.jar" />
+    <pathelement path="${lib.dir}/@JDBC@" />
+    <pathelement path="${lib.dir}/jms-1.0.2a.jar" />
+    <pathelement path="${lib.dir}/jndi-1.2.1.jar" />
+    <pathelement path="${lib.dir}/jta-1.0.1.jar" />
+    <pathelement path="${lib.dir}/commons-logging-1.0.3.jar" />
+    <pathelement path="${lib.dir}/openjms-client-0.7.6.1.jar" />
+    <pathelement path="${classes.dir}" />
+  </path>
+
+
+  <!-- ==================================================================== -->
+  <!--                      Prepare target directories                      -->
+  <!-- ==================================================================== -->
+  <target name="prepare">
+    <mkdir dir="${build.dir}"/>
+  </target>
+
+
+  <!-- ==================================================================== -->
+  <!--                 Clean the build and distribution package             -->
+  <!-- ==================================================================== -->
+  <target name="clean" description="Clean the build and distribution package">
+    <delete dir="${build.dir}"/>
+  </target>
+
+
+  <!-- ==================================================================== -->
+  <!--          Cleans and builds all the packages and examples             -->
+  <!-- ==================================================================== -->
+  <target name="all" depends="clean,examples"
+          description="Cleans and builds all the packages and examples" />
+
+
+  <!-- ==================================================================== -->
+  <!--          Builds the example packages (including debugging info)      -->
+  <!-- ==================================================================== -->
+  <target name="examples" depends="prepare"
+          description="Builds the example packages (including debugging info)">
+
+    <!-- create the builded examples directory -->
+    <mkdir dir="${build.dir}/examples" />
+
+    <!-- build the java files -->
+    <javac srcdir="${examples.dir}"
+           destdir="${build.dir}/examples"
+           includes="**/*.java"
+           excludes="**/package.html"
+           debug="on"
+           deprecation="${deprecation}">
+           <classpath refid="project.class.path" />
+    </javac>
+
+  </target>
+
+</project>
+

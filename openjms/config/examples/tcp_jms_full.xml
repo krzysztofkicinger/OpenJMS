@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<!-- OpenJMS configuration:
+     . TCP connectors  
+     . JDBM persistency
+     . embedded JNDI provider
+     . preconfigured destinations
+
+     This configuration shows all configuration elements relevant when using a
+     TCP connector
+ -->
+
+<Configuration>
+
+  <!-- Optional. The tcp connector is the default connector -->
+  <Connectors>
+    <Connector scheme="tcp">
+      <ConnectionFactories>
+        <QueueConnectionFactory name="JmsQueueConnectionFactory" />
+        <TopicConnectionFactory name="JmsTopicConnectionFactory" />
+      </ConnectionFactories>
+    </Connector>
+  </Connectors>
+
+  <!-- Required -->
+  <DatabaseConfiguration>
+    <JdbmDatabaseConfiguration name="openjms.db" />
+  </DatabaseConfiguration>
+
+  <!-- Required -->
+  <AdminConfiguration
+     script="${openjms.home}\bin\startjms.bat"
+     config="${openjms.home}\config\examples\tcp_jms_full.xml" />
+
+  <!-- Optional. This represents the default configuration  -->
+  <ServerConfiguration host="localhost" embeddedJNDI="true" />
+
+  <!-- Optional. This represents the default configuration  -->
+  <TcpConfiguration port="3030" jndiPort="3035" />
+        
+  <!-- Optional. This represents the default configuration  -->
+  <MessageManagerConfiguration destinationCacheSize="10000" />
+
+  <!-- Optional. This represents the default configuration  -->
+  <SchedulerConfiguration maxThreads="10" />
+
+  <!-- Optional. This represents the default configuration  -->
+  <GarbageCollectionConfiguration memoryCheckInterval="60"
+                                  lowWaterThreshold="20"
+                                  garbageCollectionInterval="120"
+                                  garbageCollectionThreadPriority="5">
+  </GarbageCollectionConfiguration>
+
+  <!-- Optional. This represents the default configuration  -->
+  <LoggerConfiguration file="${openjms.home}/config/log4j.xml" />
+
+  <!-- Optional. If not specified, no destinations will be created -->
+  <AdministeredDestinations>
+    <AdministeredTopic name="topic1">
+      <Subscriber name="sub1" />
+      <Subscriber name="sub2" />
+    </AdministeredTopic>
+  
+    <AdministeredQueue name="queue1" />
+    <AdministeredQueue name="queue2" />
+    <AdministeredQueue name="queue3" />
+  </AdministeredDestinations>
+
+</Configuration>

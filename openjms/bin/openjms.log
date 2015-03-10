@@ -1,0 +1,367 @@
+20:41:36.479 INFO  [main] - Instantiated the RmiRegistryService service on port 1099
+20:41:36.480 INFO  [main] - Embedded RMI registry running on port 1099
+20:41:36.606 INFO  [main] - Started service [RmiRegistryService]
+20:41:36.607 INFO  [main] - Started service [ThreadPoolManager]
+20:41:36.607 INFO  [main] - Started service [EventManagerThread]
+20:41:36.609 INFO  [main] - Removed expired messages.
+20:41:36.609 INFO  [main] - Started service [DatabaseService]
+20:41:36.609 INFO  [main] - Started service [Scheduler]
+20:41:36.609 INFO  [main] - Started service [LeaseManagerReaper]
+20:41:36.610 INFO  [main] - Registering Garbage Collection every 60000 for memory.
+20:41:36.611 INFO  [main] - Registering Garbage Collection every 120000 for other resources.
+20:41:36.611 INFO  [main] - Started service [GCCollectionService]
+20:41:36.611 INFO  [main] - Started service [AuthenticationManager]
+20:41:36.619 INFO  [main] - Started service [MessageManager]
+20:41:36.655 INFO  [main] - Creating server interface for the tcp connector
+20:41:36.667 INFO  [main] - Creating server interface for the rmi connector
+20:41:36.712 INFO  [main] - JMS Server is bound to rmi://192.168.0.15:1099/OpenJMSServer
+20:41:36.718 INFO  [main] - JMS Admin Server is bound to rmi://192.168.0.15:1099/JmsAdminServer
+20:41:36.719 INFO  [main] - Creating JNDI interface for the tcp connector
+20:41:36.726 INFO  [main] - Started TCP JNDI server on port 3035
+20:41:36.726 INFO  [main] - Creating JNDI interface for the rmi connector
+20:41:52.611 INFO  [server-0] - Stopping all services
+20:41:52.612 INFO  [server-0] - Stopped service [RmiRegistryService]
+20:41:52.862 INFO  [server-0] - Stopped service [ThreadPoolManager]
+20:41:52.863 INFO  [server-0] - Stopped service [EventManagerThread]
+20:41:52.873 INFO  [server-0] - Stopped service [DatabaseService]
+20:41:53.125 INFO  [server-0] - Stopped service [Scheduler]
+20:41:53.126 INFO  [server-0] - Stopped service [LeaseManagerReaper]
+20:41:53.126 INFO  [server-0] - Stopped service [GCCollectionService]
+20:41:53.128 INFO  [server-0] - Stopped service [AuthenticationManager]
+20:41:53.128 INFO  [server-0] - Server Shutdown scheduled for 5 secs
+20:42:45.283 INFO  [main] - Instantiated the RmiRegistryService service on port 1099
+20:42:45.284 INFO  [main] - Embedded RMI registry running on port 1099
+20:42:45.369 INFO  [main] - Started service [RmiRegistryService]
+20:42:45.370 INFO  [main] - Started service [ThreadPoolManager]
+20:42:45.370 INFO  [main] - Started service [EventManagerThread]
+20:42:45.383 INFO  [main] - Removed expired messages.
+20:42:45.383 INFO  [main] - Started service [DatabaseService]
+20:42:45.383 INFO  [main] - Started service [Scheduler]
+20:42:45.384 INFO  [main] - Started service [LeaseManagerReaper]
+20:42:45.384 INFO  [main] - Registering Garbage Collection every 60000 for memory.
+20:42:45.385 INFO  [main] - Registering Garbage Collection every 120000 for other resources.
+20:42:45.385 INFO  [main] - Started service [GCCollectionService]
+20:42:45.385 INFO  [main] - Started service [AuthenticationManager]
+20:42:45.397 INFO  [main] - Started service [MessageManager]
+20:42:45.418 INFO  [main] - Creating server interface for the tcp connector
+20:42:45.429 INFO  [main] - Creating server interface for the rmi connector
+20:42:45.476 INFO  [main] - JMS Server is bound to rmi://192.168.0.15:1099/OpenJMSServer
+20:42:45.484 INFO  [main] - JMS Admin Server is bound to rmi://192.168.0.15:1099/JmsAdminServer
+20:42:45.486 INFO  [main] - Creating JNDI interface for the tcp connector
+20:42:45.492 INFO  [main] - Started TCP JNDI server on port 3035
+20:42:45.492 INFO  [main] - Creating JNDI interface for the rmi connector
+20:43:50.624 INFO  [server-0] - Stopping all services
+20:43:50.624 INFO  [server-0] - Stopped service [RmiRegistryService]
+20:43:51.126 INFO  [server-0] - Stopped service [ThreadPoolManager]
+20:43:51.126 INFO  [server-0] - Stopped service [EventManagerThread]
+20:43:51.140 INFO  [server-0] - Stopped service [DatabaseService]
+20:43:51.391 INFO  [server-0] - Stopped service [Scheduler]
+20:43:51.391 INFO  [server-0] - Stopped service [LeaseManagerReaper]
+20:43:51.392 INFO  [server-0] - Stopped service [GCCollectionService]
+20:43:51.393 INFO  [server-0] - Stopped service [AuthenticationManager]
+20:43:51.393 INFO  [server-0] - Server Shutdown scheduled for 5 secs
+20:44:20.870 INFO  [main] - Instantiated the RmiRegistryService service on port 1099
+20:44:20.871 INFO  [main] - Embedded RMI registry running on port 1099
+20:44:20.961 INFO  [main] - Started service [RmiRegistryService]
+20:44:20.962 INFO  [main] - Started service [ThreadPoolManager]
+20:44:20.962 INFO  [main] - Started service [EventManagerThread]
+20:44:20.975 INFO  [main] - Removed expired messages.
+20:44:20.976 INFO  [main] - Started service [DatabaseService]
+20:44:20.976 INFO  [main] - Started service [Scheduler]
+20:44:20.976 INFO  [main] - Started service [LeaseManagerReaper]
+20:44:20.976 INFO  [main] - Registering Garbage Collection every 60000 for memory.
+20:44:20.977 INFO  [main] - Registering Garbage Collection every 120000 for other resources.
+20:44:20.978 INFO  [main] - Started service [GCCollectionService]
+20:44:20.978 INFO  [main] - Started service [AuthenticationManager]
+20:44:20.990 INFO  [main] - Started service [MessageManager]
+20:44:20.993 INFO  [main] - Creating server interface for the tcp connector
+20:44:21.004 INFO  [main] - Creating server interface for the rmi connector
+20:44:21.055 INFO  [main] - JMS Server is bound to rmi://192.168.0.15:1099/OpenJMSServer
+20:44:21.060 INFO  [main] - JMS Admin Server is bound to rmi://192.168.0.15:1099/JmsAdminServer
+20:44:21.062 INFO  [main] - Creating JNDI interface for the tcp connector
+20:44:21.067 INFO  [main] - Started TCP JNDI server on port 3035
+20:44:21.067 INFO  [main] - Creating JNDI interface for the rmi connector
+20:44:40.396 INFO  [server-0] - Stopping all services
+20:44:40.397 INFO  [server-0] - Stopped service [RmiRegistryService]
+20:44:40.649 INFO  [server-0] - Stopped service [ThreadPoolManager]
+20:44:40.650 INFO  [server-0] - Stopped service [EventManagerThread]
+20:44:40.659 INFO  [server-0] - Stopped service [DatabaseService]
+20:44:40.912 INFO  [server-0] - Stopped service [Scheduler]
+20:44:40.912 INFO  [server-0] - Stopped service [LeaseManagerReaper]
+20:44:40.913 INFO  [server-0] - Stopped service [GCCollectionService]
+20:44:40.914 INFO  [server-0] - Stopped service [AuthenticationManager]
+20:44:40.915 INFO  [server-0] - Server Shutdown scheduled for 5 secs
+20:45:00.598 INFO  [main] - Instantiated the RmiRegistryService service on port 1099
+20:45:00.598 INFO  [main] - Embedded RMI registry running on port 1099
+20:45:00.681 INFO  [main] - Started service [RmiRegistryService]
+20:45:00.681 INFO  [main] - Started service [ThreadPoolManager]
+20:45:00.682 INFO  [main] - Started service [EventManagerThread]
+20:45:00.699 INFO  [main] - Removed expired messages.
+20:45:00.699 INFO  [main] - Started service [DatabaseService]
+20:45:00.700 INFO  [main] - Started service [Scheduler]
+20:45:00.700 INFO  [main] - Started service [LeaseManagerReaper]
+20:45:00.700 INFO  [main] - Registering Garbage Collection every 60000 for memory.
+20:45:00.701 INFO  [main] - Registering Garbage Collection every 120000 for other resources.
+20:45:00.701 INFO  [main] - Started service [GCCollectionService]
+20:45:00.701 INFO  [main] - Started service [AuthenticationManager]
+20:45:00.713 INFO  [main] - Started service [MessageManager]
+20:45:00.715 INFO  [main] - Creating server interface for the tcp connector
+20:45:00.729 INFO  [main] - Creating server interface for the rmi connector
+20:45:00.777 INFO  [main] - JMS Server is bound to rmi://192.168.0.15:1099/OpenJMSServer
+20:45:00.783 INFO  [main] - JMS Admin Server is bound to rmi://192.168.0.15:1099/JmsAdminServer
+20:45:00.784 INFO  [main] - Creating JNDI interface for the tcp connector
+20:45:00.792 INFO  [main] - Started TCP JNDI server on port 3035
+20:45:00.792 INFO  [main] - Creating JNDI interface for the rmi connector
+20:47:00.702 INFO  [EventManager-Worker-3] - DMGC Collected 0 caches, 0 remaining.
+20:47:00.702 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 7 remaining.
+20:49:00.704 INFO  [EventManager-Worker-4] - DMGC Collected 0 caches, 1 remaining.
+20:49:00.705 INFO  [EventManager-Worker-4] - DMGC Collected 0 destinations, 7 remaining.
+20:49:31.380 INFO  [EventManager-Worker-3] - Failed to verify that session 9fade641-d908-1004-88dc-2bfe5e48c28b is active.
+20:50:32.392 INFO  [EventManager-Worker-0] - Failed to verify that session a01dff21-d908-1004-88dc-2bfe5e48c28b is active.
+20:50:33.399 INFO  [EventManager-Worker-0] - Failed to verify that session 9fade641-d908-1004-88dc-2bfe5e48c28b is active.
+20:51:00.706 INFO  [EventManager-Worker-1] - DMGC Collected 0 caches, 1 remaining.
+20:51:00.706 INFO  [EventManager-Worker-1] - DMGC Collected 0 destinations, 7 remaining.
+20:51:34.405 INFO  [EventManager-Worker-4] - Failed to verify that session a01dff21-d908-1004-88dc-2bfe5e48c28b is active.
+20:51:35.411 INFO  [EventManager-Worker-4] - Failed to verify that session 9fade641-d908-1004-88dc-2bfe5e48c28b is active.
+20:52:36.421 INFO  [EventManager-Worker-1] - Failed to verify that session a01dff21-d908-1004-88dc-2bfe5e48c28b is active.
+20:52:37.526 INFO  [EventManager-Worker-1] - Failed to verify that session 9fade641-d908-1004-88dc-2bfe5e48c28b is active.
+20:52:37.527 INFO  [EventManager-Worker-1] - Cleaning up connection 9faded48-d908-1004-8ab5-1ce4929894f7
+20:53:00.707 INFO  [EventManager-Worker-4] - DMGC Collected 0 caches, 1 remaining.
+20:53:00.707 INFO  [EventManager-Worker-4] - DMGC Collected 0 destinations, 7 remaining.
+20:53:38.632 INFO  [EventManager-Worker-3] - Failed to verify that session a01dff21-d908-1004-88dc-2bfe5e48c28b is active.
+20:53:38.633 INFO  [EventManager-Worker-3] - Cleaning up connection a01dfa70-d908-1004-87e0-6a2ae327e851
+20:55:00.709 INFO  [EventManager-Worker-3] - DMGC Collected 0 caches, 1 remaining.
+20:55:00.710 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 7 remaining.
+20:55:55.041 INFO  [server-0] - Stopping all services
+20:55:55.041 INFO  [server-0] - Stopped service [RmiRegistryService]
+20:55:55.542 INFO  [server-0] - Stopped service [ThreadPoolManager]
+20:55:55.542 INFO  [server-0] - Stopped service [EventManagerThread]
+20:55:55.546 INFO  [server-0] - Stopped service [DatabaseService]
+20:55:55.797 INFO  [server-0] - Stopped service [Scheduler]
+20:55:55.798 INFO  [server-0] - Stopped service [LeaseManagerReaper]
+20:55:55.798 INFO  [server-0] - Stopped service [GCCollectionService]
+20:55:55.799 INFO  [server-0] - Stopped service [AuthenticationManager]
+20:55:55.799 INFO  [server-0] - Server Shutdown scheduled for 5 secs
+21:11:33.577 INFO  [main] - Instantiated the RmiRegistryService service on port 1099
+21:11:33.577 INFO  [main] - Embedded RMI registry running on port 1099
+21:11:33.676 INFO  [main] - Started service [RmiRegistryService]
+21:11:33.676 INFO  [main] - Started service [ThreadPoolManager]
+21:11:33.676 INFO  [main] - Started service [EventManagerThread]
+21:11:33.709 INFO  [main] - Removed expired messages.
+21:11:33.709 INFO  [main] - Started service [DatabaseService]
+21:11:33.710 INFO  [main] - Started service [Scheduler]
+21:11:33.710 INFO  [main] - Started service [LeaseManagerReaper]
+21:11:33.710 INFO  [main] - Registering Garbage Collection every 60000 for memory.
+21:11:33.712 INFO  [main] - Registering Garbage Collection every 120000 for other resources.
+21:11:33.712 INFO  [main] - Started service [GCCollectionService]
+21:11:33.712 INFO  [main] - Started service [AuthenticationManager]
+21:11:33.728 INFO  [main] - Started service [MessageManager]
+21:11:33.734 INFO  [main] - Creating server interface for the tcp connector
+21:11:33.746 INFO  [main] - Creating server interface for the rmi connector
+21:11:33.899 INFO  [main] - JMS Server is bound to rmi://192.168.0.15:1099/OpenJMSServer
+21:11:33.905 INFO  [main] - JMS Admin Server is bound to rmi://192.168.0.15:1099/JmsAdminServer
+21:11:33.906 INFO  [main] - Creating JNDI interface for the tcp connector
+21:11:33.915 INFO  [main] - Started TCP JNDI server on port 3035
+21:11:33.915 INFO  [main] - Creating JNDI interface for the rmi connector
+21:12:15.547 INFO  [server-0] - Stopping all services
+21:12:15.548 INFO  [server-0] - Stopped service [RmiRegistryService]
+21:12:15.798 INFO  [server-0] - Stopped service [ThreadPoolManager]
+21:12:15.799 INFO  [server-0] - Stopped service [EventManagerThread]
+21:12:15.812 INFO  [server-0] - Stopped service [DatabaseService]
+21:12:16.064 INFO  [server-0] - Stopped service [Scheduler]
+21:12:16.065 INFO  [server-0] - Stopped service [LeaseManagerReaper]
+21:12:16.065 INFO  [server-0] - Stopped service [GCCollectionService]
+21:12:16.066 INFO  [server-0] - Stopped service [AuthenticationManager]
+21:12:16.067 INFO  [server-0] - Server Shutdown scheduled for 5 secs
+21:12:47.571 INFO  [main] - Instantiated the RmiRegistryService service on port 1099
+21:12:47.571 INFO  [main] - Embedded RMI registry running on port 1099
+21:12:47.655 INFO  [main] - Started service [RmiRegistryService]
+21:12:47.656 INFO  [main] - Started service [ThreadPoolManager]
+21:12:47.656 INFO  [main] - Started service [EventManagerThread]
+21:12:47.688 INFO  [main] - Removed expired messages.
+21:12:47.688 INFO  [main] - Started service [DatabaseService]
+21:12:47.689 INFO  [main] - Started service [Scheduler]
+21:12:47.689 INFO  [main] - Started service [LeaseManagerReaper]
+21:12:47.689 INFO  [main] - Registering Garbage Collection every 60000 for memory.
+21:12:47.691 INFO  [main] - Registering Garbage Collection every 120000 for other resources.
+21:12:47.691 INFO  [main] - Started service [GCCollectionService]
+21:12:47.691 INFO  [main] - Started service [AuthenticationManager]
+21:12:47.702 INFO  [main] - Started service [MessageManager]
+21:12:47.708 INFO  [main] - Creating server interface for the tcp connector
+21:12:47.720 INFO  [main] - Creating server interface for the rmi connector
+21:12:47.769 INFO  [main] - JMS Server is bound to rmi://192.168.0.15:1099/OpenJMSServer
+21:12:47.776 INFO  [main] - JMS Admin Server is bound to rmi://192.168.0.15:1099/JmsAdminServer
+21:12:47.777 INFO  [main] - Creating JNDI interface for the tcp connector
+21:12:47.782 INFO  [main] - Started TCP JNDI server on port 3035
+21:12:47.782 INFO  [main] - Creating JNDI interface for the rmi connector
+21:14:47.692 INFO  [EventManager-Worker-3] - DMGC Collected 0 caches, 1 remaining.
+21:14:47.693 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 9 remaining.
+21:15:10.911 INFO  [EventManager-Worker-4] - Failed to verify that session a8e4922d-d908-1004-8c5d-754f5490ca4a is active.
+21:15:11.918 INFO  [EventManager-Worker-4] - Failed to verify that session a8a8a335-d908-1004-8c5d-754f5490ca4a is active.
+21:15:12.924 INFO  [EventManager-Worker-4] - Failed to verify that session a91c8151-d908-1004-8c5d-754f5490ca4a is active.
+21:16:13.938 INFO  [EventManager-Worker-1] - Failed to verify that session a8e4922d-d908-1004-8c5d-754f5490ca4a is active.
+21:16:14.947 INFO  [EventManager-Worker-1] - Failed to verify that session a8a8a335-d908-1004-8c5d-754f5490ca4a is active.
+21:16:15.950 INFO  [EventManager-Worker-1] - Failed to verify that session a91c8151-d908-1004-8c5d-754f5490ca4a is active.
+21:16:47.694 INFO  [EventManager-Worker-3] - DMGC Collected 0 caches, 1 remaining.
+21:16:47.695 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 9 remaining.
+21:16:58.555 INFO  [server-0] - Stopping all services
+21:16:58.556 INFO  [server-0] - Stopped service [RmiRegistryService]
+21:16:59.059 INFO  [server-0] - Stopped service [ThreadPoolManager]
+21:16:59.060 INFO  [server-0] - Stopped service [EventManagerThread]
+21:16:59.067 INFO  [server-0] - Stopped service [DatabaseService]
+21:16:59.320 INFO  [server-0] - Stopped service [Scheduler]
+21:16:59.320 INFO  [server-0] - Stopped service [LeaseManagerReaper]
+21:16:59.320 INFO  [server-0] - Stopped service [GCCollectionService]
+21:16:59.326 INFO  [server-0] - Stopped service [AuthenticationManager]
+21:16:59.327 INFO  [server-0] - Server Shutdown scheduled for 5 secs
+21:18:15.420 INFO  [main] - Instantiated the RmiRegistryService service on port 1099
+21:18:15.420 INFO  [main] - Embedded RMI registry running on port 1099
+21:18:15.506 INFO  [main] - Started service [RmiRegistryService]
+21:18:15.506 INFO  [main] - Started service [ThreadPoolManager]
+21:18:15.507 INFO  [main] - Started service [EventManagerThread]
+21:18:15.544 INFO  [main] - Removed expired messages.
+21:18:15.544 INFO  [main] - Started service [DatabaseService]
+21:18:15.544 INFO  [main] - Started service [Scheduler]
+21:18:15.545 INFO  [main] - Started service [LeaseManagerReaper]
+21:18:15.545 INFO  [main] - Registering Garbage Collection every 60000 for memory.
+21:18:15.546 INFO  [main] - Registering Garbage Collection every 120000 for other resources.
+21:18:15.546 INFO  [main] - Started service [GCCollectionService]
+21:18:15.546 INFO  [main] - Started service [AuthenticationManager]
+21:18:15.559 INFO  [main] - Started service [MessageManager]
+21:18:15.573 INFO  [main] - Creating server interface for the tcp connector
+21:18:15.585 INFO  [main] - Creating server interface for the rmi connector
+21:18:15.632 INFO  [main] - JMS Server is bound to rmi://192.168.0.15:1099/OpenJMSServer
+21:18:15.637 INFO  [main] - JMS Admin Server is bound to rmi://192.168.0.15:1099/JmsAdminServer
+21:18:15.640 INFO  [main] - Creating JNDI interface for the tcp connector
+21:18:15.648 INFO  [main] - Started TCP JNDI server on port 3035
+21:18:15.648 INFO  [main] - Creating JNDI interface for the rmi connector
+21:20:15.547 INFO  [EventManager-Worker-4] - DMGC Collected 1 caches, 0 remaining.
+21:20:15.548 INFO  [EventManager-Worker-4] - DMGC Collected 0 destinations, 10 remaining.
+21:22:15.549 INFO  [EventManager-Worker-1] - DMGC Collected 0 caches, 0 remaining.
+21:22:15.549 INFO  [EventManager-Worker-1] - DMGC Collected 0 destinations, 10 remaining.
+21:24:15.549 INFO  [EventManager-Worker-3] - DMGC Collected 0 caches, 0 remaining.
+21:24:15.549 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 10 remaining.
+21:26:15.549 INFO  [EventManager-Worker-0] - DMGC Collected 0 caches, 0 remaining.
+21:26:15.549 INFO  [EventManager-Worker-0] - DMGC Collected 0 destinations, 10 remaining.
+21:28:15.549 INFO  [EventManager-Worker-2] - DMGC Collected 0 caches, 0 remaining.
+21:28:15.550 INFO  [EventManager-Worker-2] - DMGC Collected 0 destinations, 10 remaining.
+21:30:15.551 INFO  [EventManager-Worker-4] - DMGC Collected 0 caches, 0 remaining.
+21:30:15.552 INFO  [EventManager-Worker-4] - DMGC Collected 0 destinations, 10 remaining.
+21:32:15.553 INFO  [EventManager-Worker-1] - DMGC Collected 0 caches, 0 remaining.
+21:32:15.553 INFO  [EventManager-Worker-1] - DMGC Collected 0 destinations, 10 remaining.
+21:34:15.556 INFO  [EventManager-Worker-3] - DMGC Collected 1 caches, 0 remaining.
+21:34:15.557 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 10 remaining.
+21:36:15.558 INFO  [EventManager-Worker-0] - DMGC Collected 0 caches, 0 remaining.
+21:36:15.559 INFO  [EventManager-Worker-0] - DMGC Collected 0 destinations, 10 remaining.
+21:38:15.561 INFO  [EventManager-Worker-2] - DMGC Collected 0 caches, 0 remaining.
+21:38:15.562 INFO  [EventManager-Worker-2] - DMGC Collected 0 destinations, 10 remaining.
+21:40:15.562 INFO  [EventManager-Worker-4] - DMGC Collected 0 caches, 0 remaining.
+21:40:15.562 INFO  [EventManager-Worker-4] - DMGC Collected 0 destinations, 10 remaining.
+21:42:15.562 INFO  [EventManager-Worker-1] - DMGC Collected 0 caches, 0 remaining.
+21:42:15.562 INFO  [EventManager-Worker-1] - DMGC Collected 0 destinations, 10 remaining.
+21:44:15.563 INFO  [EventManager-Worker-3] - DMGC Collected 0 caches, 0 remaining.
+21:44:15.563 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 10 remaining.
+21:46:15.564 INFO  [EventManager-Worker-0] - DMGC Collected 0 caches, 0 remaining.
+21:46:15.565 INFO  [EventManager-Worker-0] - DMGC Collected 0 destinations, 10 remaining.
+21:47:27.300 INFO  [server-0] - Stopping all services
+21:47:27.301 INFO  [server-0] - Stopped service [RmiRegistryService]
+21:47:27.802 INFO  [server-0] - Stopped service [ThreadPoolManager]
+21:47:27.803 INFO  [server-0] - Stopped service [EventManagerThread]
+21:47:27.812 INFO  [server-0] - Stopped service [DatabaseService]
+21:47:28.063 INFO  [server-0] - Stopped service [Scheduler]
+21:47:28.064 INFO  [server-0] - Stopped service [LeaseManagerReaper]
+21:47:28.065 INFO  [server-0] - Stopped service [GCCollectionService]
+21:47:28.066 INFO  [server-0] - Stopped service [AuthenticationManager]
+21:47:28.067 INFO  [server-0] - Server Shutdown scheduled for 5 secs
+21:48:06.115 INFO  [main] - Instantiated the RmiRegistryService service on port 1099
+21:48:06.116 INFO  [main] - Embedded RMI registry running on port 1099
+21:48:06.201 INFO  [main] - Started service [RmiRegistryService]
+21:48:06.202 INFO  [main] - Started service [ThreadPoolManager]
+21:48:06.202 INFO  [main] - Started service [EventManagerThread]
+21:48:06.246 INFO  [main] - Removed expired messages.
+21:48:06.246 INFO  [main] - Started service [DatabaseService]
+21:48:06.246 INFO  [main] - Started service [Scheduler]
+21:48:06.247 INFO  [main] - Started service [LeaseManagerReaper]
+21:48:06.247 INFO  [main] - Registering Garbage Collection every 60000 for memory.
+21:48:06.248 INFO  [main] - Registering Garbage Collection every 120000 for other resources.
+21:48:06.248 INFO  [main] - Started service [GCCollectionService]
+21:48:06.249 INFO  [main] - Started service [AuthenticationManager]
+21:48:06.263 INFO  [main] - Started service [MessageManager]
+21:48:06.278 INFO  [main] - Creating server interface for the tcp connector
+21:48:06.293 INFO  [main] - Creating server interface for the rmi connector
+21:48:06.346 INFO  [main] - JMS Server is bound to rmi://192.168.0.15:1099/OpenJMSServer
+21:48:06.352 INFO  [main] - JMS Admin Server is bound to rmi://192.168.0.15:1099/JmsAdminServer
+21:48:06.354 INFO  [main] - Creating JNDI interface for the tcp connector
+21:48:06.360 INFO  [main] - Started TCP JNDI server on port 3035
+21:48:06.360 INFO  [main] - Creating JNDI interface for the rmi connector
+21:48:40.362 INFO  [RMI TCP Connection(11)-192.168.0.15] - Failed to verify that session b52aabe8-d908-1004-88fa-16626a1ff5ce is active.
+21:48:41.370 INFO  [RMI TCP Connection(11)-192.168.0.15] - Failed to verify that session b53bf5b1-d908-1004-88fa-16626a1ff5ce is active.
+21:50:06.250 INFO  [EventManager-Worker-1] - DMGC Collected 0 caches, 1 remaining.
+21:50:06.252 INFO  [EventManager-Worker-1] - DMGC Collected 0 destinations, 11 remaining.
+21:50:13.611 INFO  [EventManager-Worker-4] - Failed to verify that session b55312e1-d908-1004-88fa-16626a1ff5ce is active.
+21:51:14.618 INFO  [EventManager-Worker-2] - Failed to verify that session b55312e1-d908-1004-88fa-16626a1ff5ce is active.
+21:51:21.635 INFO  [server-0] - Stopping all services
+21:51:21.636 INFO  [server-0] - Stopped service [RmiRegistryService]
+21:51:22.138 INFO  [server-0] - Stopped service [ThreadPoolManager]
+21:51:22.139 INFO  [server-0] - Stopped service [EventManagerThread]
+21:51:22.150 INFO  [server-0] - Stopped service [DatabaseService]
+21:51:22.401 INFO  [server-0] - Stopped service [Scheduler]
+21:51:22.402 INFO  [server-0] - Stopped service [LeaseManagerReaper]
+21:51:22.403 INFO  [server-0] - Stopped service [GCCollectionService]
+21:51:22.405 INFO  [server-0] - Stopped service [AuthenticationManager]
+21:51:22.407 INFO  [server-0] - Server Shutdown scheduled for 5 secs
+22:03:47.448 INFO  [main] - Instantiated the RmiRegistryService service on port 1099
+22:03:47.449 INFO  [main] - Embedded RMI registry running on port 1099
+22:03:47.537 INFO  [main] - Started service [RmiRegistryService]
+22:03:47.537 INFO  [main] - Started service [ThreadPoolManager]
+22:03:47.538 INFO  [main] - Started service [EventManagerThread]
+22:03:47.587 INFO  [main] - Removed expired messages.
+22:03:47.588 INFO  [main] - Started service [DatabaseService]
+22:03:47.589 INFO  [main] - Started service [Scheduler]
+22:03:47.589 INFO  [main] - Started service [LeaseManagerReaper]
+22:03:47.589 INFO  [main] - Registering Garbage Collection every 60000 for memory.
+22:03:47.591 INFO  [main] - Registering Garbage Collection every 120000 for other resources.
+22:03:47.591 INFO  [main] - Started service [GCCollectionService]
+22:03:47.591 INFO  [main] - Started service [AuthenticationManager]
+22:03:47.604 INFO  [main] - Started service [MessageManager]
+22:03:47.611 INFO  [main] - Creating server interface for the tcp connector
+22:03:47.626 INFO  [main] - Creating server interface for the rmi connector
+22:03:47.683 INFO  [main] - JMS Server is bound to rmi://192.168.0.15:1099/OpenJMSServer
+22:03:47.690 INFO  [main] - JMS Admin Server is bound to rmi://192.168.0.15:1099/JmsAdminServer
+22:03:47.691 INFO  [main] - Creating JNDI interface for the tcp connector
+22:03:47.697 INFO  [main] - Started TCP JNDI server on port 3035
+22:03:47.697 INFO  [main] - Creating JNDI interface for the rmi connector
+22:05:07.573 INFO  [EventManager-Worker-1] - Failed to verify that session bae218a1-d908-1004-8bdd-049ad3cac1da is active.
+22:05:47.591 INFO  [EventManager-Worker-2] - DMGC Collected 0 caches, 1 remaining.
+22:05:47.592 INFO  [EventManager-Worker-2] - DMGC Collected 0 destinations, 12 remaining.
+22:06:08.590 INFO  [EventManager-Worker-4] - Failed to verify that session bb22a475-d908-1004-8bdd-049ad3cac1da is active.
+22:06:09.592 INFO  [EventManager-Worker-4] - Failed to verify that session bada4d51-d908-1004-8bdd-049ad3cac1da is active.
+22:06:10.589 INFO  [EventManager-Worker-4] - Failed to verify that session bae218a1-d908-1004-8bdd-049ad3cac1da is active.
+22:07:11.608 INFO  [EventManager-Worker-1] - Failed to verify that session bb22a475-d908-1004-8bdd-049ad3cac1da is active.
+22:07:12.612 INFO  [EventManager-Worker-1] - Failed to verify that session bada4d51-d908-1004-8bdd-049ad3cac1da is active.
+22:07:13.615 INFO  [EventManager-Worker-1] - Failed to verify that session bae218a1-d908-1004-8bdd-049ad3cac1da is active.
+22:07:47.593 INFO  [EventManager-Worker-3] - DMGC Collected 0 caches, 1 remaining.
+22:07:47.594 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 12 remaining.
+22:08:14.631 INFO  [EventManager-Worker-4] - Failed to verify that session bb22a475-d908-1004-8bdd-049ad3cac1da is active.
+22:08:15.635 INFO  [EventManager-Worker-4] - Failed to verify that session bada4d51-d908-1004-8bdd-049ad3cac1da is active.
+22:08:16.656 INFO  [EventManager-Worker-4] - Failed to verify that session bae218a1-d908-1004-8bdd-049ad3cac1da is active.
+22:08:16.658 INFO  [EventManager-Worker-4] - Cleaning up connection bae20ce8-d908-1004-8b8e-b797a4a0bc22
+22:09:17.679 INFO  [EventManager-Worker-1] - Failed to verify that session bb22a475-d908-1004-8bdd-049ad3cac1da is active.
+22:09:17.679 INFO  [EventManager-Worker-1] - Cleaning up connection bb229218-d908-1004-85f3-0054bafbfdb0
+22:09:18.687 INFO  [EventManager-Worker-1] - Failed to verify that session bada4d51-d908-1004-8bdd-049ad3cac1da is active.
+22:09:18.688 INFO  [EventManager-Worker-1] - Cleaning up connection bad9e248-d908-1004-805f-1a176deaf42e
+22:09:47.596 INFO  [EventManager-Worker-3] - DMGC Collected 1 caches, 0 remaining.
+22:09:47.597 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 12 remaining.
+22:11:47.597 INFO  [EventManager-Worker-3] - DMGC Collected 0 caches, 0 remaining.
+22:11:47.597 INFO  [EventManager-Worker-3] - DMGC Collected 0 destinations, 12 remaining.
+22:13:19.696 INFO  [EventManager-Worker-1] - Failed to verify that session be0b9a9d-d908-1004-8bdd-049ad3cac1da is active.
+22:13:47.337 INFO  [server-0] - Stopping all services
+22:13:47.337 INFO  [server-0] - Stopped service [RmiRegistryService]
+22:13:47.839 INFO  [server-0] - Stopped service [ThreadPoolManager]
+22:13:47.840 INFO  [server-0] - Stopped service [EventManagerThread]
+22:13:47.849 INFO  [server-0] - Stopped service [DatabaseService]
+22:13:48.100 INFO  [server-0] - Stopped service [Scheduler]
+22:13:48.100 INFO  [server-0] - Stopped service [LeaseManagerReaper]
+22:13:48.101 INFO  [server-0] - Stopped service [GCCollectionService]
+22:13:48.101 INFO  [server-0] - Stopped service [AuthenticationManager]
+22:13:48.102 INFO  [server-0] - Server Shutdown scheduled for 5 secs
