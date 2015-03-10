@@ -7,6 +7,8 @@ Project presents simple implementation of Java Messaging Service Specification.
 
 ### OpenJSM Management
 
+Complete OpenJSM project is delivered within **openjsm** folder. Project is based on OpenJSM 0.7.6.1 version.
+
 How to start/shutdown OpenJSM Server?
 ```sh
 $ startup
